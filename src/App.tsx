@@ -7,9 +7,9 @@ import {Footer} from "./site/Footer";
 export function App() {
     return (
         <>
-            <Header title={'HELLOWORLD'}/>
-            <Body/>
-            <Footer/>
+            <Header title={'HELLO WORLD'}/>
+            <Body titleForBody={'NEW BODY'}/>
+            <Footer titleForFooter={'NEW FOOTER'}/>
         </>
     );
 }
