@@ -3,31 +3,40 @@ import './App.css';
 import {NewComponent} from "./NewComponent";
 
 export function App() {
-    const topCars = [
-        {manufacturer:'BMW', model:'m5cs'},
-        {manufacturer:'Mercedes', model:'e63s'},
-        {manufacturer:'Audi', model:'rs6'}
-    ]
-    // const students = [
-    //     {id: 1, name: "James", age: 8},
-    //     {id: 2, name: "Robert", age: 18},
-    //     {id: 3, name: "John", age: 28},
-    //     {id: 4, name: "Michael", age: 38},
-    //     {id: 5, name: "William", age: 48},
-    //     {id: 6, name: "David", age: 58},
-    //     {id: 7, name: "Richard", age: 68},
-    //     {id: 8, name: "Joseph", age: 78},
-    //     {id: 9, name: "Thomas", age: 88},
-    //     {id: 10, name: "Charles", age: 98},
-    //     {id: 11, name: "Christopher", age: 100},
-    // ]
+    // const myFirstSubscriber = (event: MouseEvent<HTMLBodyElementEventMap>) => {
+    //     console.log('Hello im Vasya!')
+    // }
+    //
+    // const mySecondSubscriber = (event: MouseEvent<HTMLBodyElementEventMap>) => {
+    //     console.log('Hello im Ivan')
+    // }
 
+    // const onClickHandler = (name: string) => {
+    //     console.log(name)
+    // }
+
+    const foo1=(name: number)=>{
+        //ничего не передавать, но в консоли должно показаться 100200
+        console.log(name)
+    }
+    const foo2=(name: number)=>{
+        console.log(name)
+
+    }
 
     return (
-        <>
-            <NewComponent topCars={topCars}/>
-        </>
+        <div className='App'>
+            {/*<button onClick={(event) => {*/}
+            {/*    console.log('Hello!')*/}
+            {/*}}>MyYouTubeChanel-1*/}
+            {/*</button>*/}
+            {/*<button onClick={(event) =>onClickHandler('Vasya')}>MyYouTubeChanel-1</button>*/}
+            {/*<button onClick={(event) =>onClickHandler('Ivan')}>MyYouTubeChanel-2</button>*/}
+            {/*<button onClick={()=>onClickHandler('some info')}>MyYouTubeChanel-3</button>*/}
+
+        <button onClick={(event)=>foo1(100200)}>1</button>
+        <button onClick={()=>foo2(100200)}>2</button>
+        </div>
+
     );
 }
-
-
