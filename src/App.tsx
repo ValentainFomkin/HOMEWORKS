@@ -1,27 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Button} from "./components/Button";
+
 
 export function App() {
-    const Button1Foo = (subscriber: string, age: number, address: string) => {
-        console.log(subscriber, age, address)
-    }
-    const Button2Foo = (subscriber: string, age: number) => {
-        console.log(subscriber, age)
-    }
-    const Button3Foo = () => {
-        console.log('im stupid button :(')
-    }
+    const [money, setMoney] = useState([
+        { banknote: 'Dollars', nominal: 100, number: ' a1234567890' },
+        { banknote: 'Dollars', nominal: 50, number: ' z1234567890' },
+        { banknote: 'RUBLS', nominal: 100, number: ' w1234567890' },
+        { banknote: 'Dollars', nominal: 100, number: ' e1234567890' },
+        { banknote: 'Dollars', nominal: 50, number: ' c1234567890' },
+        { banknote: 'RUBLS', nominal: 100, number: ' r1234567890' },
+        { banknote: 'Dollars', nominal: 50, number: ' x1234567890' },
+        { banknote: 'RUBLS', nominal: 50, number: ' v1234567890' },
+    ])
     return (
 
-        <div className='App'>
-            {/*<button>MyYouTubeChanel-1</button>*/}
-            {/*<button>MyYouTubeChanel-2</button>*/}
-
-            <Button name={'MyYouTubeChanel-1'} callBack={() => Button1Foo('im Vasya', 21, 'live in Minsk')}/>
-            <Button name={'MyYouTubeChanel-2'} callBack={() => Button2Foo('im Ivan', 23)}/>
-            <Button name={'stupid button'} callBack={Button3Foo}/>
-        </div>
+        <ul>
+            {money.map((objFromMoneyArr)=>{
+                return (
+                    <li>
+                        <span>{objFromMoneyArr.banknote}</span>
+                        <span>{objFromMoneyArr.nominal}</span>
+                        <span>{objFromMoneyArr.number}</span>
+                    </li>
+                )
+            })}
+        </ul>
 
     );
 }
